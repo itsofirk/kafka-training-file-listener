@@ -1,0 +1,2 @@
+class FileListenerException(Exception):
+    pass
