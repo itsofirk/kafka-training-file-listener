@@ -16,7 +16,7 @@ def kafka_host(_arg):
     parts = _arg.split(':')
     if not len(parts) == 2 or ' ' in _arg:
         raise FileListenerException("Provided kafka address is not in the correct format (host:port).")
-    if not parts[1].isdigit() or 1 < int(parts[1]) < 25565:
+    if not parts[1].isdigit() or 1 > int(parts[1]) or int(parts[1]) > 65535:
         raise FileListenerException("Kafka port must be a number.")
     return _arg
 
