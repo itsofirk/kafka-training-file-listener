@@ -27,7 +27,7 @@ parser = argparse.ArgumentParser(
 )
 
 parser.add_argument('-d', '--directory', type=directory, help='The directory to listen to', required=True)
-parser.add_argument('-k', '--kafka', type=kafka_host, metavar='hostname:port',
+parser.add_argument('-k', '--kafka', type=kafka_host, nargs='+', metavar='hostname:port',
                     help='kafka address to send messages into', required=True)
 parser.add_argument('-t', '--topic', default='fl', metavar='prefix',
                     help='specify a prefix for the kafka topics: prefix-jpeg, prefix-pdf (default: fl)', )
